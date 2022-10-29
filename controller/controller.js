@@ -6,7 +6,8 @@ exports.register_controller = async(req,res)=>{
         if(registerServiceresponce.status == 0){
             res.status(200).json({
                 status : 0,
-                message:"registred successfully",
+                message:registerServiceresponce.message,
+                token:registerServiceresponce.token
 
             })
         }
@@ -20,7 +21,8 @@ exports.login_controller = async(req,res)=>{
           if(loginResponse.status == 0){
             res.status(200).json({
                 status:0,
-                message:loginResponse.message
+                message:loginResponse.message,
+                token:loginResponse.token
             })
           }
           else{
